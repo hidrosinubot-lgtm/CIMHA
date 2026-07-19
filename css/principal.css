@@ -55,10 +55,7 @@ body {
 /* ============================================ */
 
 @media (max-width: 480px) {
-    .bg-banner-gradient {
-        border-radius: 0 0 32px 32px;
-    }
-    
+
     .card-item {
         padding: 16px;
         gap: 16px;
@@ -76,8 +73,28 @@ body {
 /* 7. LAYOUT GLOBAL - Espaciado de bordes       */
 /* ============================================ */
 
+/* Quitamos el padding general de main (lo movemos a la sección de cards) */
 main {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
+    padding-left: 0;
+    padding-right: 0;
     box-sizing: border-box;
+}
+
+/* Sección de las cards - mantiene el espaciado actual a los bordes */
+main > section:not(.bg-banner-gradient) {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ============================================ */
+/* 8. BANNER - Full width, sin redondeo, padding interno 14px */
+/* ============================================ */
+
+.bg-banner-gradient {
+    border-radius: 0 !important; /* pisa el rounded-b-[40px] y la media query */
+}
+
+.bg-banner-gradient .px-gutter {
+    padding-left: 14px;
+    padding-right: 14px;
 }
