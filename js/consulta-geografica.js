@@ -75,7 +75,10 @@ function openModal(type) {
         div.className = `px-gutter py-5 flex items-center cursor-pointer border-b border-surface-container transition-colors ${
             isSelected ? 'bg-secondary-container/10 border-l-[6px] border-l-secondary' : 'hover:bg-surface-container-low'
         }`;
-        div.innerHTML = `<span class="font-body-lg text-on-surface ${isSelected ? 'font-normal' : ''}">${opt}</span>`;
+        
+        // ✅ OPCIÓN B: Sin negrilla en ningún caso - texto normal siempre
+        div.innerHTML = `<span class="font-body-lg text-on-surface">${opt}</span>`;
+        
         div.onclick = () => selectOption(opt);
         list.appendChild(div);
     });
@@ -97,7 +100,9 @@ function selectOption(val) {
             selectedDept = val;
             deptLabel.textContent = val;
             deptLabel.classList.remove('text-on-surface-variant');
-            deptLabel.classList.add('text-on-surface', 'font-bold');
+            // ✅ Sin negrilla en la etiqueta del departamento
+            deptLabel.classList.add('text-on-surface');
+            deptLabel.classList.remove('font-bold');
             
             // Reset Municipio
             selectedMuni = null;
@@ -114,7 +119,9 @@ function selectOption(val) {
         selectedMuni = val;
         muniLabel.textContent = val;
         muniLabel.classList.remove('text-on-surface-variant');
-        muniLabel.classList.add('text-on-surface', 'font-bold');
+        // ✅ Sin negrilla en la etiqueta del municipio
+        muniLabel.classList.add('text-on-surface');
+        muniLabel.classList.remove('font-bold');
     }
 
     validateForm();
@@ -143,7 +150,7 @@ function validateForm() {
 
 submitBtn.addEventListener('click', () => {
     if (!submitBtn.disabled) {
-        // Guardar selección en localStorage
+        // ✅ Guardar datos en localStorage
         localStorage.setItem('selected_location', JSON.stringify({
             dept: selectedDept,
             muni: selectedMuni
@@ -154,10 +161,10 @@ submitBtn.addEventListener('click', () => {
         submitBtn.style.opacity = '0';
         submitBtn.style.transform = 'scale(0.95)';
         
-        // Redirigir después de 600ms
         setTimeout(() => {
-            console.log('📍 Ubicación seleccionada:', selectedDept, '→', selectedMuni);
-            window.location.href = 'dashboard.html'; // Cambia por la pantalla destino
+            console.log('Ubicación seleccionada:', selectedDept, '→', selectedMuni);
+            console.log('Datos guardados en localStorage:', localStorage.getItem('selected_location'));
+            window.location.href = 'dashboard.html'; // Cambia por tu pantalla destino
         }, 600);
     }
 });
@@ -176,5 +183,5 @@ document.addEventListener('keydown', (e) => {
 // 9. INICIALIZACIÓN                           //
 // ============================================ //
 
-console.log('🚀 Consulta Geográfica - Iniciado correctamente');
-console.log('📍 Departamentos disponibles:', Object.keys(data).length);
+console.log('Consulta Geográfica - Iniciado correctamente');
+console.log('Departamentos disponibles:', Object.keys(data).length);
