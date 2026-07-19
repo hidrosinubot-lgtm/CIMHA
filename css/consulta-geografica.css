@@ -1,7 +1,7 @@
 /* ============================================ */
 /* CONSULTA-GEOGRAFICA.CSS - ESTILOS           */
 /* Basado en Hydrologic Precision System        */
-/* DESIGN.md v1.0 - TEXTOS REDUCIDOS 10%       */
+/* DESIGN.md v1.0 - SOLO ESCRITORIO            */
 /* ============================================ */
 
 /* ============================================ */
@@ -53,33 +53,16 @@
     /* Tipografía - Inter */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
-    /* ============================================ */
-    /* TAMAÑOS DE TEXTO - REDUCIDOS 10%            */
-    /* Valores originales → reducidos 10%          */
-    /* ============================================ */
-    
-    /* display-metric: 48px → 43.2px ≈ 43px */
+    /* TAMAÑOS DE TEXTO - REDUCIDOS 10% */
     --text-display-metric: 43px;
-    
-    /* headline-lg: 32px → 28.8px ≈ 29px */
     --text-headline-lg: 29px;
-    
-    /* headline-lg-mobile: 24px → 21.6px ≈ 22px */
     --text-headline-lg-mobile: 22px;
-    
-    /* headline-md: 20px → 18px */
     --text-headline-md: 18px;
-    
-    /* body-lg: 16px → 14.4px ≈ 14px */
     --text-body-lg: 14px;
-    
-    /* body-sm: 14px → 12.6px ≈ 13px */
     --text-body-sm: 13px;
-    
-    /* label-caps: 12px → 10.8px ≈ 11px */
     --text-label-caps: 11px;
     
-    /* Pesos de fuente - Basados en DESIGN.md */
+    /* Pesos de fuente */
     --weight-display-metric: 700;
     --weight-headline: 600;
     --weight-body: 400;
@@ -94,19 +77,19 @@
     --space-stack-md: 12px;
     --space-stack-lg: 24px;
     
-    /* Bordes redondeados - Basados en DESIGN.md */
-    --radius-sm: 0.25rem;      /* 4px */
-    --radius-default: 0.5rem;  /* 8px - Consistente en todos los contenedores */
-    --radius-md: 0.75rem;      /* 12px */
-    --radius-lg: 1rem;         /* 16px - Para tarjetas grandes */
-    --radius-xl: 1.5rem;       /* 24px - Para bottom sheets */
+    /* Bordes redondeados */
+    --radius-sm: 0.25rem;
+    --radius-default: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
     --radius-full: 9999px;
     
-    /* Sombras - Basadas en DESIGN.md */
+    /* Sombras */
     --shadow-level-0: none;
-    --shadow-level-1: 0px 1px 0px 0px #E2E8F0; /* Borde sutil para cards */
-    --shadow-level-2: 0px 10px 25px rgba(0, 0, 0, 0.05); /* Para modals/bottom sheets */
-    --shadow-scrim: rgba(19, 27, 46, 0.4); /* 40% opacity navy scrim */
+    --shadow-level-1: 0px 1px 0px 0px #E2E8F0;
+    --shadow-level-2: 0px 10px 25px rgba(0, 0, 0, 0.05);
+    --shadow-scrim: rgba(19, 27, 46, 0.4);
 }
 
 /* ============================================ */
@@ -116,8 +99,7 @@
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
-    /* Iconos también reducidos proporcionalmente */
-    font-size: 22px; /* Tamaño base reducido de 24px → 22px */
+    font-size: 22px;
 }
 
 /* ============================================ */
@@ -125,41 +107,33 @@
 /* ============================================ */
 
 .bottom-sheet {
-    /* Elevación Nivel 2: sombra ambiental */
     box-shadow: var(--shadow-level-2);
-    
-    /* Forma: esquinas superiores redondeadas (1.5rem = 24px) */
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    
-    /* Animación de entrada */
     transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Color de superficie (DESIGN.md) */
     background-color: var(--surface);
+    max-height: 70vh; /* ← Estilo de escritorio aplicado siempre */
 }
 
 .bottom-sheet.open {
     transform: translateY(0);
 }
 
-/* Mango "grabber" - Centrado en la parte superior */
+/* Mango "grabber" */
 .bottom-sheet .grabber {
-    width: 48px;          /* 3rem */
-    height: 4px;          /* 0.25rem */
+    width: 48px;
+    height: 4px;
     background-color: var(--outline-variant);
     border-radius: var(--radius-full);
-    margin: 12px auto;    /* stack-md */
+    margin: 12px auto;
 }
 
 /* ============================================ */
-/* 4. OVERLAY - Scrim (DESIGN.md)              */
+/* 4. OVERLAY - Scrim                           */
 /* ============================================ */
 
 .overlay {
-    /* Scrim: 40% opacity navy (DESIGN.md) */
     background-color: var(--shadow-scrim);
-    
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -190,48 +164,29 @@
 }
 
 /* ============================================ */
-/* 6. BOTÓN PRIMARIO (DESIGN.md)               */
+/* 6. BOTÓN PRIMARIO                           */
 /* ============================================ */
 
-/* Botón primario - Estado deshabilitado */
 #submit-btn {
-    /* Fondo gris suave (#F1F5F9 según DESIGN.md) */
     background-color: var(--surface-container);
     color: var(--on-surface-variant);
-    
-    /* Forma: 0.5rem (8px) consistente */
     border-radius: var(--radius-default);
-    
-    /* Tipografía: bold (600 según DESIGN.md) - Texto reducido 10% */
     font-weight: var(--weight-headline);
     font-family: var(--font-family);
-    font-size: var(--text-body-lg); /* 16px → 14px */
-    
-    /* Transición suave */
+    font-size: var(--text-body-lg);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Ancho completo en móvil (DESIGN.md) */
     width: 100%;
-    
-    /* Altura consistente */
-    height: 56px; /* 3.5rem */
+    height: 56px;
 }
 
-/* Botón primario - Estado activo/habilitado */
 #submit-btn:not(:disabled) {
-    /* Navy background (DESIGN.md) */
-    background-color: var(--primary);
+    background-color: #0781fa;
     color: var(--on-primary);
-    
-    /* Shadow level 1 para cards (DESIGN.md) */
     box-shadow: var(--shadow-level-1);
-    
-    /* Interacción táctil */
     cursor: pointer;
 }
 
 #submit-btn:not(:disabled):hover {
-    /* Efecto sutil de elevación (DESIGN.md) */
     background-color: var(--primary-container);
     color: var(--on-primary-container);
     transform: scale(1.02);
@@ -243,48 +198,32 @@
 }
 
 /* ============================================ */
-/* 7. SELECTORES Y CAMPOS (DESIGN.md)          */
+/* 7. SELECTORES Y CAMPOS                       */
 /* ============================================ */
 
-/* Trigger de selección - Borde 1px */
 #dept-trigger,
 #muni-trigger {
-    /* Borde definido de 1px (DESIGN.md) */
     border: 1px solid var(--outline-variant);
-    
-    /* Forma: 0.5rem (8px) consistente */
     border-radius: var(--radius-default);
-    
-    /* Fondo de superficie */
     background-color: var(--surface);
-    
-    /* Transición suave */
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Altura consistente (56px) */
     height: 56px;
-    
-    /* Tipografía - Texto reducido 10% */
     font-family: var(--font-family);
-    font-size: var(--text-body-lg); /* 16px → 14px */
+    font-size: var(--text-body-lg);
 }
 
-/* Estado focus - Primary blue + glow (DESIGN.md) */
 #dept-trigger:focus-visible,
 #muni-trigger:focus-visible {
     border-color: var(--secondary);
     outline: none;
-    /* Glow de 2px (DESIGN.md) */
     box-shadow: 0 0 0 2px rgba(0, 88, 190, 0.2);
 }
 
-/* Hover sutil */
 #dept-trigger:hover:not(:disabled),
 #muni-trigger:hover:not(:disabled) {
     border-color: var(--secondary);
 }
 
-/* Estado deshabilitado */
 #muni-trigger:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -292,41 +231,29 @@
 }
 
 /* ============================================ */
-/* 8. LISTAS ORDENADAS (DESIGN.md)             */
+/* 8. LISTAS ORDENADAS                          */
 /* ============================================ */
 
 #options-list {
-    /* Espaciado entre elementos */
     display: flex;
     flex-direction: column;
 }
 
-/* Cada item de la lista */
 #options-list div {
-    /* Divider de 1px (DESIGN.md) */
     border-bottom: 1px solid var(--surface-container);
-    
-    /* Padding vertical generous (DESIGN.md) */
     padding: var(--space-stack-lg) var(--space-gutter);
-    
-    /* Transición suave */
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Cursor pointer */
     cursor: pointer;
-    
-    /* Tipografía - Texto reducido 10% */
     font-family: var(--font-family);
-    font-size: var(--text-body-lg); /* 16px → 14px */
+    font-size: var(--text-body-lg);
     color: var(--on-surface);
+    min-height: 56px; /* ← Estilo de escritorio aplicado siempre */
 }
 
-/* Hover en items */
 #options-list div:hover {
     background-color: var(--surface-container-low);
 }
 
-/* Item seleccionado (secondary highlight) */
 #options-list div.selected {
     background-color: var(--secondary-container);
     border-left: 6px solid var(--secondary);
@@ -356,50 +283,7 @@
 }
 
 /* ============================================ */
-/* 10. RESPONSIVE - MÓVIL (DESIGN.md)          */
-/* ============================================ */
-
-@media (max-width: 480px) {
-    /* Márgenes seguros de 16px en móvil (DESIGN.md) */
-    .bottom-sheet {
-        max-height: 85vh;
-        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    }
-    
-    /* Elementos táctiles más grandes (44px mínimo) */
-    #options-list div {
-        padding: 16px var(--space-gutter);
-        min-height: 56px;
-        /* Texto aún más pequeño en móvil */
-        font-size: var(--text-body-sm); /* 14px → 13px */
-    }
-    
-    /* Ajuste de texto para móvil */
-    #dept-trigger,
-    #muni-trigger {
-        font-size: var(--text-body-sm); /* 14px → 13px */
-    }
-    
-    /* Título del modal más pequeño en móvil */
-    #modal-title {
-        font-size: var(--text-headline-md); /* 20px → 18px */
-    }
-}
-
-/* ============================================ */
-/* 11. RESPONSIVE - ESCRITORIO (DESIGN.md)     */
-/* ============================================ */
-
-@media (min-width: 768px) {
-    /* Márgenes de 32px en desktop (DESIGN.md) */
-    .bottom-sheet {
-        max-height: 70vh;
-        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    }
-}
-
-/* ============================================ */
-/* 12. TRANSICIÓN DEL MAIN (para redirección)  */
+/* 10. TRANSICIÓN DEL MAIN                      */
 /* ============================================ */
 
 main {
@@ -412,23 +296,21 @@ main.fade-out {
 }
 
 /* ============================================ */
-/* 13. ACCESIBILIDAD - ENFOQUE VISIBLE         */
+/* 11. ACCESIBILIDAD - ENFOQUE VISIBLE         */
 /* ============================================ */
 
-/* Enfoque visible para navegación por teclado (DESIGN.md) */
 :focus-visible {
     outline: 2px solid var(--secondary);
     outline-offset: 2px;
 }
 
 /* ============================================ */
-/* 14. TIPOGRAFÍA - BASADA EN DESIGN.MD        */
-/*    TEXTOS REDUCIDOS 10%                     */
+/* 12. TIPOGRAFÍA                              */
 /* ============================================ */
 
 .display-metric {
     font-family: var(--font-family);
-    font-size: var(--text-display-metric); /* 48px → 43px */
+    font-size: var(--text-display-metric);
     font-weight: var(--weight-display-metric);
     line-height: 1.17;
     letter-spacing: -0.02em;
@@ -436,7 +318,7 @@ main.fade-out {
 
 .headline-lg {
     font-family: var(--font-family);
-    font-size: var(--text-headline-lg); /* 32px → 29px */
+    font-size: var(--text-headline-lg);
     font-weight: var(--weight-headline);
     line-height: 1.25;
     letter-spacing: -0.01em;
@@ -444,35 +326,35 @@ main.fade-out {
 
 .headline-lg-mobile {
     font-family: var(--font-family);
-    font-size: var(--text-headline-lg-mobile); /* 24px → 22px */
+    font-size: var(--text-headline-lg-mobile);
     font-weight: var(--weight-headline);
     line-height: 1.33;
 }
 
 .headline-md {
     font-family: var(--font-family);
-    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-size: var(--text-headline-md);
     font-weight: var(--weight-headline);
     line-height: 1.4;
 }
 
 .body-lg {
     font-family: var(--font-family);
-    font-size: var(--text-body-lg); /* 16px → 14px */
+    font-size: var(--text-body-lg);
     font-weight: var(--weight-body);
     line-height: 1.5;
 }
 
 .body-sm {
     font-family: var(--font-family);
-    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-size: var(--text-body-sm);
     font-weight: var(--weight-body);
     line-height: 1.43;
 }
 
 .label-caps {
     font-family: var(--font-family);
-    font-size: var(--text-label-caps); /* 12px → 11px */
+    font-size: var(--text-label-caps);
     font-weight: var(--weight-label);
     line-height: 1.33;
     letter-spacing: 0.05em;
@@ -480,13 +362,11 @@ main.fade-out {
 }
 
 /* ============================================ */
-/* 15. ESTILOS PARA BANNER Y CONTENEDORES      */
-/*     (Textos reducidos proporcionalmente)    */
+/* 13. ESTILOS PARA BANNER Y CONTENEDORES      */
 /* ============================================ */
 
-/* Banner o contenedor destacado */
 .banner {
-    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-size: var(--text-headline-md);
     font-weight: var(--weight-headline);
     padding: var(--space-stack-md) var(--space-stack-lg);
     background-color: var(--surface-container-low);
@@ -494,31 +374,27 @@ main.fade-out {
     border-left: 4px solid var(--secondary);
 }
 
-/* Texto dentro del banner */
 .banner .banner-subtitle {
-    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-size: var(--text-body-sm);
     font-weight: var(--weight-body);
     color: var(--on-surface-variant);
 }
 
-/* Título de sección */
 .section-title {
-    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-size: var(--text-headline-md);
     font-weight: var(--weight-headline);
     color: var(--on-surface);
     margin-bottom: var(--space-stack-sm);
 }
 
-/* Descripción de sección */
 .section-description {
-    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-size: var(--text-body-sm);
     color: var(--on-surface-variant);
     line-height: 1.5;
 }
 
 /* ============================================ */
-/* 16. ESTILOS PARA TARJETAS (CARDS)           */
-/*     Basados en DESIGN.md - Nivel 1          */
+/* 14. ESTILOS PARA TARJETAS (CARDS)           */
 /* ============================================ */
 
 .card {
@@ -528,67 +404,62 @@ main.fade-out {
     padding: var(--space-stack-lg);
 }
 
-/* Título dentro de tarjeta */
 .card .card-title {
-    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-size: var(--text-headline-md);
     font-weight: var(--weight-headline);
     color: var(--on-surface);
     margin-bottom: var(--space-stack-sm);
 }
 
-/* Texto dentro de tarjeta */
 .card .card-text {
-    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-size: var(--text-body-sm);
     color: var(--on-surface-variant);
     line-height: 1.5;
 }
 
 /* ============================================ */
-/* 17. ESTILOS PARA MODALES                     */
-/*     Basados en DESIGN.md - Nivel 2          */
+/* 15. ESTILOS PARA MODALES                     */
 /* ============================================ */
 
 .modal-title {
-    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-size: var(--text-headline-md);
     font-weight: var(--weight-headline);
     color: var(--on-surface);
     text-align: center;
 }
 
 .modal-subtitle {
-    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-size: var(--text-body-sm);
     color: var(--on-surface-variant);
     text-align: center;
 }
 
 /* ============================================ */
-/* 18. ESTILOS PARA FORMULARIOS                 */
+/* 16. ESTILOS PARA FORMULARIOS                 */
 /* ============================================ */
 
 .form-label {
-    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-size: var(--text-body-sm);
     font-weight: var(--weight-headline);
     color: var(--on-background);
 }
 
 .form-help-text {
-    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-size: var(--text-body-sm);
     color: var(--on-surface-variant);
     margin-top: var(--space-stack-sm);
 }
 
 /* ============================================ */
-/* 19. AJUSTE DE ICONOS EN BOTONES             */
+/* 17. AJUSTE DE ICONOS EN BOTONES             */
 /* ============================================ */
 
-/* Iconos dentro de botones */
 .btn-icon {
-    font-size: 20px; /* Reducido de 24px → 20px */
+    font-size: 20px;
     vertical-align: middle;
 }
 
-/* Iconos dentro de campos de selección */
 .select-icon {
-    font-size: 22px; /* Reducido de 24px → 22px */
+    font-size: 22px;
     color: var(--outline);
 }
