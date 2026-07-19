@@ -1,0 +1,300 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Consulta Territorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "primary": "#000000",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-secondary-fixed-variant": "#004395",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#271901",
+                        "outline": "#76777d",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed": "#001a42",
+                        "outline-variant": "#c6c6cd",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#2170e4",
+                        "tertiary-container": "#271901",
+                        "surface-tint": "#565e74",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "primary-fixed": "#dae2fd",
+                        "on-background": "#191c1e",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "on-secondary-container": "#fefcff",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-surface": "#191c1e",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface-variant": "#45464d",
+                        "surface-variant": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eceef0",
+                        "primary-container": "#131b2e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "secondary": "#0058be",
+                        "on-tertiary-container": "#98805d",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "4px",
+                        "gutter": "16px",
+                        "stack-md": "12px",
+                        "container-margin-mobile": "16px",
+                        "stack-lg": "24px",
+                        "container-margin-desktop": "32px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-metric": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-metric": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bottom-sheet {
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bottom-sheet.open {
+            transform: translateY(0);
+        }
+        .overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-lg text-on-background min-h-screen flex items-center justify-center">
+<main class="w-full max-w-md px-container-margin-mobile flex flex-col items-center py-stack-lg transition-opacity duration-500">
+<!-- Logo/Icon -->
+<div class="mb-stack-lg animate-fade-in"><img alt="Consulta Territorial Logo" class="object-contain mx-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_2e1aFE3BBTYo38yEDkHvUHNZUO-6v85PIk6NB5mbUMnvml9faIUlwJX2OebATE8Een1efeIikQ0-Qd0S0ly8qUkPkH-zu9lCBE-qgEs2JcvGSRRd0gqzosioIvht1fSa_yTmljd_Z_8IMCkc8wPCeU-XF3KYB2v9085YzPDw0sbmwfUsMFe66gUSLBSD1hFvNkpQzjZZeJ1K0rR0ecqrnz_x80cxjEvA9gg_zqDCOnteOxgZ7bAxopPDJQOwBjKoV8UGpAeQy9E" style="width: 109px; height: 109px;"></div>
+<!-- Header -->
+<header class="text-center mb-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold mb-stack-sm">Consulta Geografica&nbsp;</h1>
+<p class="font-body-sm text-on-surface-variant max-w-[280px] mx-auto">Seleccione el departamento y municipio para realizar la consulta.</p>
+</header>
+<!-- Form -->
+<div class="w-full space-y-6">
+<!-- Departamento Field -->
+<div class="space-y-2">
+<label class="block font-body-sm font-bold text-on-background ml-1">Departamento</label>
+<button class="w-full h-14 flex items-center justify-between px-4 bg-surface border border-outline-variant rounded-xl text-left hover:border-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/20" id="dept-trigger">
+<span class="text-on-surface text-on-surface-variant" id="dept-label" style="opacity: 1;">Seleccione un departamento</span>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</button>
+</div>
+<!-- Municipio Field -->
+<div class="space-y-2">
+<label class="block font-body-sm font-bold text-on-background ml-1">Municipio</label>
+<button class="w-full h-14 flex items-center justify-between px-4 border border-outline-variant/30 rounded-xl text-left transition-all bg-surface" id="muni-trigger">
+<span class="text-on-surface text-on-surface-variant" id="muni-label" style="opacity: 1;">Seleccione un municipio</span>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</button>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full h-14 font-bold rounded-xl transition-all duration-300 flex items-center justify-center active:scale-[0.98] active:opacity-80 text-on-primary shadow-lg bg-surface-dim" id="submit-btn" onclick="if (!this.disabled) { const main = document.querySelector('main'); main.style.opacity = '0'; localStorage.setItem('selected_location', JSON.stringify({dept: selectedDept, muni: selectedMuni})); setTimeout(() =&gt; { window.location.href = '{{DATA:SCREEN:SCREEN_53}}'; }, 500); }" disabled="true">
+                    Ingresar
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Sheet Component -->
+<div class="overlay fixed inset-0 bg-primary-container/40 z-[60]" id="modal-overlay" onclick="closeModal()"></div>
+<div class="bottom-sheet fixed bottom-0 left-0 right-0 bg-surface rounded-t-[1.5rem] z-[70] max-h-[80vh] flex flex-col shadow-2xl" id="bottom-sheet">
+<div class="w-12 h-1 bg-outline-variant rounded-full mx-auto my-3"></div>
+<div class="px-gutter pb-4">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 text-center" id="modal-title">Seleccione Municipio</h3>
+</div>
+<div class="overflow-y-auto flex-1 pb-8" id="options-list"></div>
+</div>
+<script>
+        const data = {
+            'Atlántico': ['Sabanalarga', 'Campo de la Cruz', 'Santa Lucía', 'Suan'],
+            'Bolívar': ['Magangué', 'Mompox', 'Pinillos', 'San Cristóbal'],
+            'Cesar': ['Gamarra', 'La Gloria', 'Chimichagua', 'Tamalameque'],
+            'Córdoba': ['Montería', 'Lorica', 'Tierralta', 'San Pelayo', 'Cereté'],
+            'La Guajira': ['Riohacha', 'Distracción', 'Fonseca', 'Barrancas'],
+            'Magdalena': ['El Banco', 'Plato', 'Santa Ana', 'Tenerife'],
+            'Sucre': ['Majagual', 'Guaranda', 'San Marcos', 'Sucre']
+        };
+
+        let selectedDept = null;
+        let selectedMuni = null;
+        let activeSelectionType = null;
+
+        const deptTrigger = document.getElementById('dept-trigger');
+        const muniTrigger = document.getElementById('muni-trigger');
+        const submitBtn = document.getElementById('submit-btn');
+        const deptLabel = document.getElementById('dept-label');
+        const muniLabel = document.getElementById('muni-label');
+        const overlay = document.getElementById('modal-overlay');
+        const sheet = document.getElementById('bottom-sheet');
+        const list = document.getElementById('options-list');
+        const modalTitle = document.getElementById('modal-title');
+
+        deptTrigger.addEventListener('click', () => openModal('dept'));
+        muniTrigger.addEventListener('click', () => openModal('muni'));
+
+        function openModal(type) {
+            activeSelectionType = type;
+            list.innerHTML = '';
+            
+            const options = type === 'dept' ? Object.keys(data) : data[selectedDept];
+            const currentSelection = type === 'dept' ? selectedDept : selectedMuni;
+            modalTitle.textContent = type === 'dept' ? 'Seleccione Departamento' : 'Seleccione Municipio';
+
+            options.forEach(opt => {
+                const isSelected = opt === currentSelection;
+                const div = document.createElement('div');
+                div.className = `px-gutter py-5 flex items-center cursor-pointer border-b border-surface-container transition-colors ${isSelected ? 'bg-secondary-container/10 border-l-[6px] border-l-secondary' : 'hover:bg-surface-container-low'}`;
+                div.innerHTML = `<span class="font-body-lg text-on-surface ${isSelected ? 'font-bold' : ''}">${opt}</span>`;
+                div.onclick = () => selectOption(opt);
+                list.appendChild(div);
+            });
+
+            overlay.classList.add('open');
+            sheet.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            overlay.classList.remove('open');
+            sheet.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function selectOption(val) {
+            if (activeSelectionType === 'dept') {
+                if (selectedDept !== val) {
+                    selectedDept = val;
+                    deptLabel.textContent = val;
+                    deptLabel.classList.remove('text-on-surface-variant');
+                    deptLabel.classList.add('text-on-surface', 'font-bold');
+                    
+                    // Reset Municipio
+                    selectedMuni = null;
+                    muniLabel.textContent = 'Seleccione un municipio';
+                    muniLabel.classList.add('text-on-surface-variant');
+                    muniLabel.classList.remove('text-on-surface', 'font-bold');
+                    
+                    // Enable Municipio Trigger
+                    muniTrigger.disabled = false;
+                    muniTrigger.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-surface-container-low');
+                    muniTrigger.classList.add('bg-surface');
+                }
+            } else {
+                selectedMuni = val;
+                muniLabel.textContent = val;
+                muniLabel.classList.remove('text-on-surface-variant');
+                muniLabel.classList.add('text-on-surface', 'font-bold');
+            }
+
+            validateForm();
+            closeModal();
+        }
+
+        function validateForm() {
+            if (selectedDept && selectedMuni) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('bg-surface-dim', 'text-on-surface-variant/50', 'cursor-not-allowed');
+                submitBtn.classList.add('bg-secondary', 'text-on-primary', 'shadow-lg', 'active:scale-[0.98]', 'active:opacity-80');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('bg-surface-dim', 'text-on-surface-variant/50', 'cursor-not-allowed');
+                submitBtn.classList.remove('bg-secondary', 'text-on-primary', 'shadow-lg');
+            }
+        }
+
+        submitBtn.addEventListener('click', () => {
+            if (!submitBtn.disabled) {
+                submitBtn.style.transition = 'all 0.5s ease-out';
+                submitBtn.style.opacity = '0';
+                submitBtn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    alert('Consulta iniciada para: ' + selectedDept + ', ' + selectedMuni);
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.transform = 'scale(1)';
+                }, 600);
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
