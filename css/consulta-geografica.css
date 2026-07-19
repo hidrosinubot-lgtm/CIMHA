@@ -1,5 +1,7 @@
 /* ============================================ */
-/* CONSULTA-GEOGRAFICA.CSS                      */
+/* CONSULTA-GEOGRAFICA.CSS - ESTILOS           */
+/* Basado en Hydrologic Precision System        */
+/* DESIGN.md v1.0 - TEXTOS REDUCIDOS 10%       */
 /* ============================================ */
 
 /* ============================================ */
@@ -51,14 +53,31 @@
     /* Tipografía - Inter */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
-    /* Tamaños de texto - Basados en DESIGN.md */
-    --text-display-metric: 48px;
-    --text-headline-lg: 32px;
-    --text-headline-lg-mobile: 24px;
-    --text-headline-md: 20px;
-    --text-body-lg: 16px;
-    --text-body-sm: 14px;
-    --text-label-caps: 12px;
+    /* ============================================ */
+    /* TAMAÑOS DE TEXTO - REDUCIDOS 10%            */
+    /* Valores originales → reducidos 10%          */
+    /* ============================================ */
+    
+    /* display-metric: 48px → 43.2px ≈ 43px */
+    --text-display-metric: 43px;
+    
+    /* headline-lg: 32px → 28.8px ≈ 29px */
+    --text-headline-lg: 29px;
+    
+    /* headline-lg-mobile: 24px → 21.6px ≈ 22px */
+    --text-headline-lg-mobile: 22px;
+    
+    /* headline-md: 20px → 18px */
+    --text-headline-md: 18px;
+    
+    /* body-lg: 16px → 14.4px ≈ 14px */
+    --text-body-lg: 14px;
+    
+    /* body-sm: 14px → 12.6px ≈ 13px */
+    --text-body-sm: 13px;
+    
+    /* label-caps: 12px → 10.8px ≈ 11px */
+    --text-label-caps: 11px;
     
     /* Pesos de fuente - Basados en DESIGN.md */
     --weight-display-metric: 700;
@@ -97,6 +116,8 @@
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
+    /* Iconos también reducidos proporcionalmente */
+    font-size: 22px; /* Tamaño base reducido de 24px → 22px */
 }
 
 /* ============================================ */
@@ -181,9 +202,10 @@
     /* Forma: 0.5rem (8px) consistente */
     border-radius: var(--radius-default);
     
-    /* Tipografía: bold (600 según DESIGN.md) */
+    /* Tipografía: bold (600 según DESIGN.md) - Texto reducido 10% */
     font-weight: var(--weight-headline);
     font-family: var(--font-family);
+    font-size: var(--text-body-lg); /* 16px → 14px */
     
     /* Transición suave */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -242,9 +264,9 @@
     /* Altura consistente (56px) */
     height: 56px;
     
-    /* Tipografía */
+    /* Tipografía - Texto reducido 10% */
     font-family: var(--font-family);
-    font-size: var(--text-body-lg);
+    font-size: var(--text-body-lg); /* 16px → 14px */
 }
 
 /* Estado focus - Primary blue + glow (DESIGN.md) */
@@ -293,9 +315,9 @@
     /* Cursor pointer */
     cursor: pointer;
     
-    /* Tipografía */
+    /* Tipografía - Texto reducido 10% */
     font-family: var(--font-family);
-    font-size: var(--text-body-lg);
+    font-size: var(--text-body-lg); /* 16px → 14px */
     color: var(--on-surface);
 }
 
@@ -348,12 +370,19 @@
     #options-list div {
         padding: 16px var(--space-gutter);
         min-height: 56px;
+        /* Texto aún más pequeño en móvil */
+        font-size: var(--text-body-sm); /* 14px → 13px */
     }
     
     /* Ajuste de texto para móvil */
     #dept-trigger,
     #muni-trigger {
-        font-size: var(--text-body-sm);
+        font-size: var(--text-body-sm); /* 14px → 13px */
+    }
+    
+    /* Título del modal más pequeño en móvil */
+    #modal-title {
+        font-size: var(--text-headline-md); /* 20px → 18px */
     }
 }
 
@@ -394,11 +423,12 @@ main.fade-out {
 
 /* ============================================ */
 /* 14. TIPOGRAFÍA - BASADA EN DESIGN.MD        */
+/*    TEXTOS REDUCIDOS 10%                     */
 /* ============================================ */
 
 .display-metric {
     font-family: var(--font-family);
-    font-size: var(--text-display-metric);
+    font-size: var(--text-display-metric); /* 48px → 43px */
     font-weight: var(--weight-display-metric);
     line-height: 1.17;
     letter-spacing: -0.02em;
@@ -406,7 +436,7 @@ main.fade-out {
 
 .headline-lg {
     font-family: var(--font-family);
-    font-size: var(--text-headline-lg);
+    font-size: var(--text-headline-lg); /* 32px → 29px */
     font-weight: var(--weight-headline);
     line-height: 1.25;
     letter-spacing: -0.01em;
@@ -414,37 +444,151 @@ main.fade-out {
 
 .headline-lg-mobile {
     font-family: var(--font-family);
-    font-size: var(--text-headline-lg-mobile);
+    font-size: var(--text-headline-lg-mobile); /* 24px → 22px */
     font-weight: var(--weight-headline);
     line-height: 1.33;
 }
 
 .headline-md {
     font-family: var(--font-family);
-    font-size: var(--text-headline-md);
+    font-size: var(--text-headline-md); /* 20px → 18px */
     font-weight: var(--weight-headline);
     line-height: 1.4;
 }
 
 .body-lg {
     font-family: var(--font-family);
-    font-size: var(--text-body-lg);
+    font-size: var(--text-body-lg); /* 16px → 14px */
     font-weight: var(--weight-body);
     line-height: 1.5;
 }
 
 .body-sm {
     font-family: var(--font-family);
-    font-size: var(--text-body-sm);
+    font-size: var(--text-body-sm); /* 14px → 13px */
     font-weight: var(--weight-body);
     line-height: 1.43;
 }
 
 .label-caps {
     font-family: var(--font-family);
-    font-size: var(--text-label-caps);
+    font-size: var(--text-label-caps); /* 12px → 11px */
     font-weight: var(--weight-label);
     line-height: 1.33;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+/* ============================================ */
+/* 15. ESTILOS PARA BANNER Y CONTENEDORES      */
+/*     (Textos reducidos proporcionalmente)    */
+/* ============================================ */
+
+/* Banner o contenedor destacado */
+.banner {
+    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-weight: var(--weight-headline);
+    padding: var(--space-stack-md) var(--space-stack-lg);
+    background-color: var(--surface-container-low);
+    border-radius: var(--radius-default);
+    border-left: 4px solid var(--secondary);
+}
+
+/* Texto dentro del banner */
+.banner .banner-subtitle {
+    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-weight: var(--weight-body);
+    color: var(--on-surface-variant);
+}
+
+/* Título de sección */
+.section-title {
+    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-weight: var(--weight-headline);
+    color: var(--on-surface);
+    margin-bottom: var(--space-stack-sm);
+}
+
+/* Descripción de sección */
+.section-description {
+    font-size: var(--text-body-sm); /* 14px → 13px */
+    color: var(--on-surface-variant);
+    line-height: 1.5;
+}
+
+/* ============================================ */
+/* 16. ESTILOS PARA TARJETAS (CARDS)           */
+/*     Basados en DESIGN.md - Nivel 1          */
+/* ============================================ */
+
+.card {
+    background-color: var(--surface-container-lowest);
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--radius-default);
+    padding: var(--space-stack-lg);
+}
+
+/* Título dentro de tarjeta */
+.card .card-title {
+    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-weight: var(--weight-headline);
+    color: var(--on-surface);
+    margin-bottom: var(--space-stack-sm);
+}
+
+/* Texto dentro de tarjeta */
+.card .card-text {
+    font-size: var(--text-body-sm); /* 14px → 13px */
+    color: var(--on-surface-variant);
+    line-height: 1.5;
+}
+
+/* ============================================ */
+/* 17. ESTILOS PARA MODALES                     */
+/*     Basados en DESIGN.md - Nivel 2          */
+/* ============================================ */
+
+.modal-title {
+    font-size: var(--text-headline-md); /* 20px → 18px */
+    font-weight: var(--weight-headline);
+    color: var(--on-surface);
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-size: var(--text-body-sm); /* 14px → 13px */
+    color: var(--on-surface-variant);
+    text-align: center;
+}
+
+/* ============================================ */
+/* 18. ESTILOS PARA FORMULARIOS                 */
+/* ============================================ */
+
+.form-label {
+    font-size: var(--text-body-sm); /* 14px → 13px */
+    font-weight: var(--weight-headline);
+    color: var(--on-background);
+}
+
+.form-help-text {
+    font-size: var(--text-body-sm); /* 14px → 13px */
+    color: var(--on-surface-variant);
+    margin-top: var(--space-stack-sm);
+}
+
+/* ============================================ */
+/* 19. AJUSTE DE ICONOS EN BOTONES             */
+/* ============================================ */
+
+/* Iconos dentro de botones */
+.btn-icon {
+    font-size: 20px; /* Reducido de 24px → 20px */
+    vertical-align: middle;
+}
+
+/* Iconos dentro de campos de selección */
+.select-icon {
+    font-size: 22px; /* Reducido de 24px → 22px */
+    color: var(--outline);
 }
