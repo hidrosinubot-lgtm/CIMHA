@@ -186,7 +186,7 @@
 #options-list div.selected {
     background-color: var(--secondary-container);
     border-left: 6px solid var(--secondary);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /* ============================================ */
