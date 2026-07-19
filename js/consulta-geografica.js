@@ -99,16 +99,14 @@ function selectOption(val) {
         if (selectedDept !== val) {
             selectedDept = val;
             deptLabel.textContent = val;
-            deptLabel.classList.remove('text-on-surface-variant');
-            // ✅ Sin negrilla en la etiqueta del departamento
-            deptLabel.classList.add('text-on-surface');
-            deptLabel.classList.remove('font-bold');
+            deptLabel.classList.remove('text-on-surface-variant', 'font-bold');
+            deptLabel.classList.add('text-on-surface', 'font-normal');
             
             // Reset Municipio
             selectedMuni = null;
             muniLabel.textContent = 'Seleccione un municipio';
             muniLabel.classList.add('text-on-surface-variant');
-            muniLabel.classList.remove('text-on-surface', 'font-bold');
+            muniLabel.classList.remove('text-on-surface', 'font-bold', 'font-normal');
             
             // Habilitar Municipio Trigger
             muniTrigger.disabled = false;
@@ -118,10 +116,8 @@ function selectOption(val) {
     } else {
         selectedMuni = val;
         muniLabel.textContent = val;
-        muniLabel.classList.remove('text-on-surface-variant');
-        // ✅ Sin negrilla en la etiqueta del municipio
-        muniLabel.classList.add('text-on-surface');
-        muniLabel.classList.remove('font-bold');
+        muniLabel.classList.remove('text-on-surface-variant', 'font-bold');
+        muniLabel.classList.add('text-on-surface', 'font-normal');
     }
 
     validateForm();
