@@ -1,0 +1,134 @@
+/* ============================================ */
+/* IR-A-CONSULTA.CSS - ESTILOS                  */
+/* Basado en Hydrologic Precision System        */
+/* DESIGN.md v1.0                               */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. ICONOS DE MATERIAL                        */
+/* ============================================ */
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ============================================ */
+/* 2. HEADER - CURVA INFERIOR                   */
+/* ============================================ */
+
+.header-curve-large {
+    border-bottom-right-radius: 6rem;
+}
+
+/* ============================================ */
+/* 3. ESTILOS GENERALES                         */
+/* ============================================ */
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #f8fbff;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* ============================================ */
+/* 4. SOMBRAS DE TARJETAS Y BOTONES            */
+/* ============================================ */
+
+.card-shadow {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-shadow {
+    box-shadow: 0 4px 12px rgba(0, 88, 190, 0.3);
+}
+
+/* ============================================ */
+/* 5. RESPONSIVE - AJUSTES PARA MÓVIL          */
+/* ============================================ */
+@media (max-width: 480px) {
+    header {
+        padding-top: 32px;
+        padding-bottom: 80px;
+    }
+    
+    main {
+        margin-top: -48px;
+    }
+    
+    article {
+        padding: 16px;
+        border-radius: 20px;
+    }
+    
+    article .flex.items-start.gap-4 {
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+    
+    article .w-16.h-16 {
+        width: 48px;
+        height: 48px;
+    }
+    
+    article h2 {
+        font-size: 16px;
+    }
+    
+    article p.text-sm {
+        font-size: 12px;
+    }
+    
+    article .flex.items-center.justify-between {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    article .flex.flex-wrap.gap-4 {
+        gap: 8px;
+    }
+    
+    article button {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================ */
+/* 6. RESPONSIVE - TABLET                       */
+/* ============================================ */
+@media (min-width: 481px) and (max-width: 768px) {
+}
+
+/* ============================================ */
+/* 7. RESPONSIVE - ESCRITORIO                   */
+/* ============================================ */
+
+@media (min-width: 769px) {
+    main {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ============================================ */
+/* 8. HEADER - Full width, sin redondeo, delimitación 14px */
+/* ============================================ */
+
+header {
+    border-radius: 0 !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box;
+}
+
+main {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box;
+}
