@@ -336,3 +336,11 @@ main {
     padding-left: 24px;
     padding-right: 24px;
 }
+
+/* ============================================ */
+/* 15. ESCALA GLOBAL                            */
+/* ============================================ */
+
+body {
+    zoom: 0.85; /* ajusta entre 0.8 y 0.9 a tu gusto */
+}
