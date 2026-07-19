@@ -96,8 +96,8 @@
 
 /* Botón primario - Estado deshabilitado */
 #submit-btn {
-    background-color: var(--surface-container);
-    color: var(--on-surface-variant);
+    background-color: #D1D5DB;
+    color: #000000;
     border-radius: var(--radius-default);
     font-weight: 600;
     font-family: 'Inter', sans-serif;
@@ -108,14 +108,14 @@
 
 /* Botón primario - Estado activo/habilitado */
 #submit-btn:not(:disabled) {
-    background-color: #0053C2;
-    color: #ffffff important¡;
+    background-color: #316CF7;
+    color: #ffffff;
     box-shadow: 0px 1px 0px 0px #E2E8F0;
     cursor: pointer;
 }
 
 #submit-btn:not(:disabled):hover {
-    background-color:#0053C2;
+    background-color: #316CF7;
     color: #ffffff;
     transform: scale(1.02);
 }
@@ -323,18 +323,39 @@ main.fade-out {
 }
 
 /* ============================================ */
-/* 14. LAYOUT GLOBAL - Espaciado de bordes      */
+/* 14. LAYOUT GLOBAL - Espaciado de bordes + Responsive */
 /* ============================================ */
 
 main {
     padding-left: 24px !important;
     padding-right: 24px !important;
     box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .bottom-sheet .px-gutter {
     padding-left: 24px;
     padding-right: 24px;
+}
+
+/* Móvil pequeño (por defecto) - ancho completo */
+main {
+    max-width: 100%;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+    main {
+        max-width: 480px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    main {
+        max-width: 560px;
+    }
 }
 
 /* ============================================ */
