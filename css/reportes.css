@@ -1,0 +1,146 @@
+/* ============================================ */
+/* REPORTES.CSS - ESTILOS                       */
+/* Basado en Hydrologic Precision System        */
+/* DESIGN.md v1.0                               */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. ESTILOS GENERALES                         */
+/* ============================================ */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f7f9fb;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================ */
+/* 2. ICONOS DE MATERIAL                        */
+/* ============================================ */
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-family: 'Material Symbols Outlined', sans-serif;
+}
+
+/* ============================================ */
+/* 3. SCROLLBAR OCULTA                         */
+/* ============================================ */
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ============================================ */
+/* 4. BORDE PUNTEADO                           */
+/* ============================================ */
+
+.dashed-border {
+    border: 2px dashed #cbd5e1;
+}
+
+/* ============================================ */
+/* 5. BOTTOM SHEET ANIMATION                   */
+/* ============================================ */
+
+.bottom-sheet-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bottom-sheet-content {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+}
+
+.bottom-sheet-active .bottom-sheet-content {
+    transform: translateY(0);
+}
+
+.bottom-sheet-active .bottom-sheet-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================================ */
+/* 6. CAROUSEL ANIMATION                       */
+/* ============================================ */
+
+.carousel-item {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
+}
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+}
+
+/* ============================================ */
+/* 7. RESPONSIVE - AJUSTES PARA MÓVIL          */
+/* ============================================ */
+
+@media (max-width: 480px) {
+    main {
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
+        min-height: 100vh;
+    }
+    
+    header {
+        padding-top: 24px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    header h1 {
+        font-size: 20px;
+    }
+    
+    .hero-banner {
+        height: 160px;
+        padding: 16px;
+    }
+    
+    .hero-banner h2 {
+        font-size: 18px;
+    }
+    
+    .hero-banner p {
+        font-size: 12px;
+    }
+    
+    form {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .carousel-container {
+        height: 100px;
+    }
+    
+    .carousel-container .w-16.h-16 {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .carousel-container .material-symbols-outlined.text-4xl {
+        font-size: 28px;
+    }
+}
+
+/* ============================================ */
+/* 8. RESPONSIVE - ESCRITORIO                   */
+/* ============================================ */
+
+@media (min-width: 769px) {
+    main {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
