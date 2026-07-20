@@ -8,7 +8,7 @@
     <!-- ✅ Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
-    <!-- ✅ Google Fonts: Inter (CARGADA PRIMERO) -->
+    <!-- ✅ Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -16,14 +16,14 @@
     <!-- ✅ Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     
-    <!-- ✅ CSS Personalizado (SIEMPRE DESPUÉS DE TAILWIND) -->
+    <!-- ✅ CSS Personalizado -->
     <link rel="stylesheet" href="css/consulta.css" />
 </head>
 <body>
     <!-- ============================================ -->
     <!-- HEADER SECTION                              -->
     <!-- ============================================ -->
-    <header class="bg-[#0066cc] pt-12 pb-24 px-container-margin-mobile header-curve-large relative">
+    <header class="bg-[#0066cc] pt-12 pb-24 px-gutter header-curve-large relative">
         <div class="flex items-center justify-between mb-2">
             <button aria-label="Volver" class="p-1 -ml-1" onclick="window.location.href='principal.html'">
                 <span class="material-symbols-outlined text-white" style="font-size: 28px; font-weight: 600;">arrow_back</span>
@@ -31,15 +31,15 @@
             <button class="p-1"></button>
         </div>
         <div>
-            <h1 class="text-[32px] font-extrabold text-white mb-2 tracking-tight font-inter">Ir a Consulta</h1>
-            <p class="text-[16px] text-white/90 font-inter font-normal">Selecciona el tipo de pronóstico que deseas consultar.</p>
+            <h1 class="text-[32px] font-extrabold text-white mb-2 tracking-tight">Ir a Consulta</h1>
+            <p class="text-[16px] text-white/90 font-normal">Selecciona el tipo de pronóstico que deseas consultar.</p>
         </div>
     </header>
 
     <!-- ============================================ -->
     <!-- MAIN CONTENT                                -->
     <!-- ============================================ -->
-    <main class="px-container-margin-mobile -mt-16 space-y-4 pb-12 relative z-20">
+    <main class="px-gutter -mt-16 space-y-4 pb-12 relative z-20">
         
         <!-- Card 1: Pronóstico de Hoy -->
         <article class="bg-[#fff9e6] rounded-3xl p-6 card-shadow border border-white/50 relative overflow-hidden">
@@ -52,8 +52,8 @@
                     />
                 </div>
                 <div class="pt-1">
-                    <h2 class="text-[18px] font-bold text-slate-800 font-inter">Pronóstico de Hoy</h2>
-                    <p class="text-sm text-slate-500 mt-0.5 font-inter">Consulta en tiempo real el estado actual del clima y del río.</p>
+                    <h2 class="text-[18px] font-bold text-slate-800">Pronóstico de Hoy</h2>
+                    <p class="text-sm text-slate-500 mt-0.5">Consulta en tiempo real el estado actual del clima y del río.</p>
                 </div>
             </div>
             <div class="flex items-center justify-between">
@@ -65,7 +65,7 @@
                             class="w-5 h-5 object-contain"
                             style="width: 21px; height: 21px;"
                         />
-                        <span class="text-slate-600 text-sm font-medium font-inter">Clima actual</span>
+                        <span class="text-slate-600 text-sm font-medium">Clima actual</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <img 
@@ -74,10 +74,10 @@
                             class="w-5 h-5 object-contain"
                             style="width: 21px; height: 21px;"
                         />
-                        <span class="text-slate-600 text-sm font-medium font-inter">Nivel del río</span>
+                        <span class="text-slate-600 text-sm font-medium">Nivel del río</span>
                     </div>
                 </div>
-                <button class="bg-[#0052cc] text-white px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 btn-shadow text-sm font-inter" onclick="window.location.href='consulta-geografica.html'">
+                <button class="bg-[#0052cc] text-white px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 btn-shadow text-sm" onclick="window.location.href='consulta-geografica.html'">
                     Consultar <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
             </div>
@@ -94,8 +94,8 @@
                     />
                 </div>
                 <div class="pt-1">
-                    <h2 class="text-[18px] font-bold text-slate-800 font-inter">Pronóstico de Mañana</h2>
-                    <p class="text-sm text-slate-500 mt-0.5 leading-tight font-inter">Clima y tendencia estimada del río para mañana.</p>
+                    <h2 class="text-[18px] font-bold text-slate-800">Pronóstico de Mañana</h2>
+                    <p class="text-sm text-slate-500 mt-0.5 leading-tight">Clima y tendencia estimada del río para mañana.</p>
                 </div>
             </div>
             <div class="flex items-center justify-between">
@@ -107,7 +107,7 @@
                             class="w-5 h-5 object-contain"
                             style="width: 21px; height: 21px;"
                         />
-                        <span class="text-slate-600 text-sm font-medium font-inter">Clima</span>
+                        <span class="text-slate-600 text-sm font-medium">Clima</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <img 
@@ -116,10 +116,10 @@
                             class="w-5 h-5 object-contain"
                             style="width: 21px; height: 21px;"
                         />
-                        <span class="text-slate-600 text-sm font-medium font-inter">Pronóstico tendencia del río</span>
+                        <span class="text-slate-600 text-sm font-medium">Pronóstico tendencia del río</span>
                     </div>
                 </div>
-                <button class="bg-[#0052cc] text-white px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 btn-shadow text-sm font-inter" onclick="window.location.href='consulta-geografica.html'">
+                <button class="bg-[#0052cc] text-white px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 btn-shadow text-sm" onclick="window.location.href='consulta-geografica.html'">
                     Consultar <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
             </div>
@@ -136,8 +136,8 @@
                     />
                 </div>
                 <div class="pt-1">
-                    <h2 class="text-[18px] font-bold text-slate-800 font-inter">Pronóstico de Semana</h2>
-                    <p class="text-sm text-slate-500 mt-0.5 font-inter">Datos semanales del clima y tendencia estimada del río.</p>
+                    <h2 class="text-[18px] font-bold text-slate-800">Pronóstico de Semana</h2>
+                    <p class="text-sm text-slate-500 mt-0.5">Datos semanales del clima y tendencia estimada del río.</p>
                 </div>
             </div>
             <div class="flex items-center justify-between">
@@ -149,7 +149,7 @@
                             class="w-5 h-5 object-contain"
                             style="width: 21px; height: 21px;"
                         />
-                        <span class="text-slate-600 text-sm font-medium font-inter">Datos semanales</span>
+                        <span class="text-slate-600 text-sm font-medium">Datos semanales</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <img 
@@ -158,10 +158,10 @@
                             class="w-5 h-5 object-contain"
                             style="width: 21px; height: 21px;"
                         />
-                        <span class="text-slate-600 text-sm font-medium font-inter">Pronóstico tendencia del río</span>
+                        <span class="text-slate-600 text-sm font-medium">Pronóstico tendencia del río</span>
                     </div>
                 </div>
-                <button class="bg-[#0052cc] text-white px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 btn-shadow text-sm font-inter" onclick="window.location.href='consulta-geografica.html'">
+                <button class="bg-[#0052cc] text-white px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 btn-shadow text-sm" onclick="window.location.href='consulta-geografica.html'">
                     Consultar <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
             </div>
