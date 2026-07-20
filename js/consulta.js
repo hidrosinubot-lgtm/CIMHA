@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Ir a Consulta - Iniciado correctamente');
     initButtonInteractions();
     initEntranceTransition();
+    initBackButton();
 });
 
 // ============================================ //
@@ -94,3 +95,23 @@ function registrarClick(tarjeta) {
 }
 
 console.log('✅ Ir a Consulta - Script cargado correctamente');
+
+// ============================================ //
+// 6. BOTÓN DE RETROCESO - Con animación de salida //
+// ============================================ //
+
+function initBackButton() {
+    const backButton = document.getElementById('back-button');
+    
+    if (backButton) {
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.classList.remove('loaded');
+            document.body.classList.add('fade-out-back');
+            
+            setTimeout(() => {
+                window.location.href = 'principal.html';
+            }, 400);
+        });
+    }
+}
