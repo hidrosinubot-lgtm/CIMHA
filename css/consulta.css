@@ -1,22 +1,12 @@
 /* ============================================ */
-/* IR-A-CONSULTA.CSS - ESTILOS                  */
+/* CONSULTA.CSS - ESTILOS                       */
 /* Basado en Hydrologic Precision System        */
 /* DESIGN.md v1.0                               */
 /* ============================================ */
 
 /* ============================================ */
-/* 1. FUENTE INTER - APLICADA GLOBALMENTE      */
+/* 1. ESTILOS GENERALES                         */
 /* ============================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-/* ============================================ */
-/* 2. ESTILOS GENERALES                         */
-/* ============================================ */
-
-* {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -25,10 +15,11 @@ body {
     background-color: #f8fbff;
     min-height: 100vh;
     overflow-y: auto;
+    zoom: 0.85; /* Reducción de escala general - igual que principal.css */
 }
 
 /* ============================================ */
-/* 3. ICONOS DE MATERIAL                        */
+/* 2. ICONOS DE MATERIAL                        */
 /* ============================================ */
 
 .material-symbols-outlined {
@@ -37,15 +28,7 @@ body {
 }
 
 /* ============================================ */
-/* 4. HEADER - CURVA INFERIOR                   */
-/* ============================================ */
-
-.header-curve-large {
-    border-bottom-right-radius: 6rem;
-}
-
-/* ============================================ */
-/* 5. SOMBRAS DE TARJETAS Y BOTONES            */
+/* 3. SOMBRAS DE TARJETAS Y BOTONES            */
 /* ============================================ */
 
 .card-shadow {
@@ -57,38 +40,41 @@ body {
 }
 
 /* ============================================ */
-/* 6. CLASE DE UTILIDAD PARA FUENTE INTER      */
+/* 4. HEADER - Sin curva, full width, delimitación 14px */
 /* ============================================ */
 
-.font-inter {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+header {
+    border-radius: 0 !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box;
+}
+
+main {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box;
 }
 
 /* ============================================ */
-/* 7. RESPONSIVE - AJUSTES PARA MÓVIL          */
+/* 5. RESPONSIVE - AJUSTES PARA MÓVIL          */
 /* ============================================ */
 
 @media (max-width: 480px) {
-    .header-curve-large {
-        border-bottom-right-radius: 3rem;
-    }
-    
     header {
         padding-top: 32px;
         padding-bottom: 80px;
     }
     
     header h1 {
-        font-size: 24px !important;
+        font-size: 24px;
     }
     
     header p {
-        font-size: 14px !important;
+        font-size: 14px;
     }
     
     main {
-        padding-left: 16px;
-        padding-right: 16px;
         margin-top: -48px;
     }
     
@@ -108,11 +94,11 @@ body {
     }
     
     article h2 {
-        font-size: 16px !important;
+        font-size: 16px;
     }
     
     article p.text-sm {
-        font-size: 12px !important;
+        font-size: 12px;
     }
     
     article .flex.items-center.justify-between {
@@ -134,22 +120,7 @@ body {
 }
 
 /* ============================================ */
-/* 8. RESPONSIVE - TABLET                       */
-/* ============================================ */
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .header-curve-large {
-        border-bottom-right-radius: 4rem;
-    }
-    
-    main {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-}
-
-/* ============================================ */
-/* 9. RESPONSIVE - ESCRITORIO                   */
+/* 6. RESPONSIVE - ESCRITORIO                   */
 /* ============================================ */
 
 @media (min-width: 769px) {
