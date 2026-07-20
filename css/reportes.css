@@ -144,3 +144,23 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* ============================================ */
+/* 9. TRANSICIÓN DE ENTRADA Y SALIDA            */
+/* ============================================ */
+
+body {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+body.fade-out-back {
+    opacity: 0;
+    transform: scale(0.98);
+}
