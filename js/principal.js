@@ -17,31 +17,44 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================ //
-// 2. INTERACCIÓN DE TARJETAS                  //
+// 2. FUNCIÓN DE TRANSICIÓN SUAVE              //
+// ============================================ //
+
+function navegarConTransicion(destino, tiempo = 400) {
+    const body = document.body;
+    
+    // Agregar clase de fade-out
+    body.classList.add('fade-out');
+    
+    // Esperar a que termine la animación y redirigir
+    setTimeout(() => {
+        window.location.href = destino;
+    }, tiempo);
+}
+
+// ============================================ //
+// 3. INTERACCIÓN DE TARJETAS                  //
 // ============================================ //
 
 function initCardInteractions() {
-    // Seleccionar todas las tarjetas con la clase .card-item
     const cards = document.querySelectorAll('.card-item');
     
     cards.forEach(card => {
-        // Efecto al presionar (mousedown)
+        // Efecto al presionar
         card.addEventListener('mousedown', () => {
             card.style.transform = 'scale(0.97)';
             card.style.transition = 'transform 0.1s ease-out';
         });
         
-        // Efecto al soltar (mouseup)
         card.addEventListener('mouseup', () => {
             card.style.transform = 'scale(1)';
         });
         
-        // Efecto al salir (mouseleave)
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'scale(1)';
         });
         
-        // Efecto táctil para móviles (touch)
+        // Efecto táctil
         card.addEventListener('touchstart', () => {
             card.style.transform = 'scale(0.97)';
             card.style.transition = 'transform 0.1s ease-out';
@@ -51,42 +64,23 @@ function initCardInteractions() {
             card.style.transform = 'scale(1)';
         });
         
-      // ✅ Click en la tarjeta - Redirección MODIFICADA
+        // ✅ Click con transición suave
         card.addEventListener('click', function(e) {
-           if (!e.target.closest('a')) {
-              const title = this.querySelector('h3')?.textContent || 'Tarjeta';
+            if (!e.target.closest('a')) {
+                const title = this.querySelector('h3')?.textContent || 'Tarjeta';
                 console.log('📱 Tarjeta seleccionada:', title);
-        
-        // ✅ REDIRECCIONES POR TARJETA
-             if (title.includes('Reportes')) {
-                 window.location.href = 'reportes.html';
-           } else if (title.includes('Acerca')) {
-                 window.location.href = 'acerca.html';
-           } else if (title.includes('Fuentes')) {
-                 window.location.href = 'fuentes.html';
-             }
-          }
-       });
-  });
-}
-
-// ============================================ //
-// 3. FUNCIONES DE UTILIDAD                     //
-// ============================================ //
-
-/**
- * Función para redirigir a una pantalla específica
- */
-function irA(destino) {
-    window.location.href = destino;
-}
-
-/**
- * Función para obtener el título de una tarjeta
- */
-function getCardTitle(cardElement) {
-    const title = cardElement.querySelector('h3');
-    return title ? title.textContent : 'Sin título';
+                
+                // ✅ Redirección con transición suave
+                if (title.includes('Reportes')) {
+                    navegarConTransicion('reportes.html');
+                } else if (title.includes('Acerca')) {
+                    navegarConTransicion('acerca.html');
+                } else if (title.includes('Fuentes')) {
+                    navegarConTransicion('fuentes.html');
+                }
+            }
+        });
+    });
 }
 
 console.log('✅ Pantalla Principal - Script cargado correctamente');
