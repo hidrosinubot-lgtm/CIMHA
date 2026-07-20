@@ -14,6 +14,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Ir a Consulta - Iniciado correctamente');
     initButtonInteractions();
+    initEntranceTransition();
 });
 
 // ============================================ //
@@ -54,7 +55,17 @@ function initButtonInteractions() {
 }
 
 // ============================================ //
-// 3. FUNCIONES DE REDIRECCIÓN                  //
+// 3. TRANSICIÓN DE ENTRADA                     //
+// ============================================ //
+
+function initEntranceTransition() {
+    requestAnimationFrame(() => {
+        document.body.classList.add('loaded');
+    });
+}
+
+// ============================================ //
+// 4. FUNCIONES DE REDIRECCIÓN                  //
 // ============================================ //
 
 /**
@@ -72,7 +83,7 @@ function volver() {
 }
 
 // ============================================ //
-// 4. FUNCIONES DE UTILIDAD                     //
+// 5. FUNCIONES DE UTILIDAD                     //
 // ============================================ //
 
 /**
