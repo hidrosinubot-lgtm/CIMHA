@@ -51,20 +51,23 @@ function initCardInteractions() {
             card.style.transform = 'scale(1)';
         });
         
-        // Click en la tarjeta - Redirección
+      // ✅ Click en la tarjeta - Redirección MODIFICADA
         card.addEventListener('click', function(e) {
-            // Evitar que el click se dispare si el usuario solo está tocando
-            if (!e.target.closest('a')) {
-                const title = this.querySelector('h3')?.textContent || 'Tarjeta';
+           if (!e.target.closest('a')) {
+              const title = this.querySelector('h3')?.textContent || 'Tarjeta';
                 console.log('📱 Tarjeta seleccionada:', title);
-                // Aquí puedes agregar redirecciones según la tarjeta
-                // Ejemplo:
-                // if (title.includes('Reportes')) {
-                //     window.location.href = 'reportes.html';
-                // }
-            }
-        });
-    });
+        
+        // ✅ REDIRECCIONES POR TARJETA
+             if (title.includes('Reportes')) {
+                 window.location.href = 'reportes.html';
+           } else if (title.includes('Acerca')) {
+                 window.location.href = 'acerca.html';
+           } else if (title.includes('Fuentes')) {
+                 window.location.href = 'fuentes.html';
+             }
+          }
+       });
+  });
 }
 
 // ============================================ //
