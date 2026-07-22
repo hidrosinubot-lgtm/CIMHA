@@ -57,7 +57,6 @@ const backButton = document.getElementById('back-button');
 const bsOverlay = document.getElementById('bs-overlay');
 const bsContainer = document.getElementById('bottom-sheet-container');
 const bsTitle = document.getElementById('bs-title');
-const bsSubtitle = document.getElementById('bs-subtitle');
 const bsList = document.getElementById('bs-list');
 
 // ============================================ //
@@ -118,11 +117,10 @@ document.getElementById('next-report').addEventListener('click', () => {
 // 5. BOTTOM SHEET                              //
 // ============================================ //
 
-function openBottomSheet(title, subtitle, options, currentValue, onSelect) {
+function openBottomSheet(title, options, currentValue, onSelect) {
     bsTitle.textContent = title;
-    bsSubtitle.textContent = subtitle;
     bsList.innerHTML = '';
-    bsList.classList.remove('px-6', 'space-y-2'); // quitamos el padding/gap tipo card
+    bsList.classList.remove('px-6', 'space-y-2');
 
     options.forEach(opt => {
         const isSelected = opt === currentValue;
