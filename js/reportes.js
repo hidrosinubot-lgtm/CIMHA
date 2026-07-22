@@ -118,28 +118,25 @@ document.getElementById('next-report').addEventListener('click', () => {
 // 5. BOTTOM SHEET                              //
 // ============================================ //
 
-function openBottomSheet(title, subtitle, options, onSelect) {
+function openBottomSheet(title, subtitle, options, currentValue, onSelect) {
     bsTitle.textContent = title;
     bsSubtitle.textContent = subtitle;
     bsList.innerHTML = '';
-    
+    bsList.classList.remove('px-6', 'space-y-2'); // quitamos el padding/gap tipo card
+
     options.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'w-full py-4 px-4 bg-slate-50 border border-slate-100 rounded-2xl text-left font-medium text-slate-800 hover:bg-blue-50 hover:border-blue-200 transition-all active:scale-[0.98]';
-        btn.textContent = opt;
-        btn.onclick = () => {
+        const isSelected = opt === currentValue;
+        const div = document.createElement('div');
+        div.className = `bs-option ${isSelected ? 'selected' : ''}`;
+        div.textContent = opt;
+        div.onclick = () => {
             onSelect(opt);
             closeBottomSheet();
         };
-        bsList.appendChild(btn);
+        bsList.appendChild(div);
     });
 
     bsContainer.classList.add('bottom-sheet-active');
-}
-
-function closeBottomSheet() {
-    bsContainer.classList.remove('bottom-sheet-active');
 }
 
 bsOverlay.addEventListener('click', closeBottomSheet);
@@ -149,7 +146,7 @@ bsOverlay.addEventListener('click', closeBottomSheet);
 // ============================================ //
 
 deptTrigger.addEventListener('click', () => {
-    openBottomSheet('Seleccionar Departamento', 'Elige el departamento de procedencia', Object.keys(data), (val) => {
+    openBottomSheet('Seleccionar Departamento', 'Elige el departamento de procedencia', Object.keys(data), selectedDept, (val) => {
         selectedDept = val;
         deptText.textContent = val;
         deptText.classList.add('text-slate-900');
@@ -165,7 +162,7 @@ deptTrigger.addEventListener('click', () => {
 
 muniTrigger.addEventListener('click', () => {
     if (!selectedDept) return;
-    openBottomSheet('Seleccionar Municipio', `Municipios de ${selectedDept}`, data[selectedDept], (val) => {
+    openBottomSheet('Seleccionar Municipio', `Municipios de ${selectedDept}`, data[selectedDept], selectedMuni, (val) => {
         selectedMuni = val;
         muniText.textContent = val;
         muniText.classList.add('text-slate-900');
