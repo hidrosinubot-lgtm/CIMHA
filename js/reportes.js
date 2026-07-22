@@ -148,7 +148,7 @@ bsOverlay.addEventListener('click', closeBottomSheet);
 // ============================================ //
 
 deptTrigger.addEventListener('click', () => {
-    openBottomSheet('Seleccionar Departamento', 'Elige el departamento de procedencia', Object.keys(data), selectedDept, (val) => {
+    openBottomSheet('Seleccionar Departamento', Object.keys(data), selectedDept, (val) => {
         selectedDept = val;
         deptText.textContent = val;
         deptText.classList.add('text-slate-900');
@@ -164,7 +164,7 @@ deptTrigger.addEventListener('click', () => {
 
 muniTrigger.addEventListener('click', () => {
     if (!selectedDept) return;
-    openBottomSheet('Seleccionar Municipio', `Municipios de ${selectedDept}`, data[selectedDept], selectedMuni, (val) => {
+    openBottomSheet('Seleccionar Municipio', data[selectedDept], selectedMuni, (val) => {
         selectedMuni = val;
         muniText.textContent = val;
         muniText.classList.add('text-slate-900');
