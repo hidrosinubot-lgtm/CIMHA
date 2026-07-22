@@ -135,19 +135,9 @@ body {
     }
 }
 
-/* ============================================ */
-/* 8. RESPONSIVE - ESCRITORIO                   */
-/* ============================================ */
-
-@media (min-width: 769px) {
-    main {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-}
 
 /* ============================================ */
-/* 9. TRANSICIÓN DE ENTRADA Y SALIDA            */
+/* 8. TRANSICIÓN DE ENTRADA Y SALIDA            */
 /* ============================================ */
 
 body {
