@@ -92,12 +92,6 @@ body {
 /* ============================================ */
 
 @media (max-width: 480px) {
-    main {
-        margin: 0;
-        border-radius: 0;
-        max-width: 100%;
-        min-height: 100vh;
-    }
     
     header {
         padding-top: 24px;
