@@ -238,7 +238,7 @@ submitBtn.addEventListener('click', async (e) => {
         console.log('✅ Reporte enviado correctamente al webhook');
 
         // Redirigir a la pantalla de confirmación
-        window.location.href = 'confirmacion.html';
+        window.location.href = 'envio-exitoso.html';
 
     } catch (error) {
         console.error('❌ Error al enviar el reporte:', error);
